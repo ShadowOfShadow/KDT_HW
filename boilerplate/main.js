@@ -29,7 +29,7 @@ alert(msg);
 // 아래에 getItemByAmount 함수를 작성하세요.
 function getItemByAmount(data, amount) {
   // 유효한 숫자 체크
-  if (isNaN(amount) || amount === "" || amount === null || amount < minAmount(data)) {
+  if (isNaN(amount) || amount === "" || amount === null || amount < minAmount(data).price) {
     return null;
   }
 
@@ -47,13 +47,13 @@ function minAmount(items) {
   const min = items.reduce((acc, val) => {
     return acc.price < val.price ? acc : val;
   });
-  return min.price;
+  return min;
 }
 
 // 최대로 비싸게 살 수 있는 값 구하기
 function maxAmount(items) {
 const max = items.reduce((acc, val) => {
   return acc.price > val.price ? acc : val;
-  });
+  },0);
   return max;
 }
