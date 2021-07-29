@@ -1,0 +1,246 @@
+element.style {
+    word-wrap: break-word;
+}
+
+.position-relative{
+    position: relative !important;
+}
+
+div {
+    display: block;
+}
+
+body{
+    background-color: #fff;
+    color: 24292e;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-size: 14px;
+    line-height: 1.5;    
+}
+
+body{
+    margin:0;
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    display:block;
+}
+
+:root{
+    --border-width: 1px;
+    --border-style: solid;
+    --font-size-small: 12px;
+    --font-weight-semibold: 500;
+    --size-2: 20px;
+}
+
+.header-overlay .Header, .header-overlay .header-logged-out {
+    background-color: transparent;
+    left: 0;
+    position: absolute!important;
+    right: 0;
+}
+
+.Header-old {
+    background-color: #24292e;
+    color: rgba(255,255,255,0.7);
+    padding-bottom: 12px;
+    padding-top: 12px;
+    z-index: 32;
+}
+
+.f4 {
+    font-size: 16px!important;
+}
+
+.py-2 {
+    padding-bottom: 8px!important;
+    padding-top: 8px!important;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section {
+    display: block;
+}
+
+svg{
+    height: 32;
+    width: 32;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.list-style-none {
+    list-style: none!important;
+}
+
+.HeaderMenu-link {
+    background: transparent;
+    color: var(--color-text-white);
+    transition: opacity .4s;
+}
+.no-underline {
+    text-decoration: none!important;
+}
+.py-3 {
+    padding-bottom: 16px!important;
+    padding-top: 16px!important;
+}
+
+.d-lg-inline-block {
+    display: inline-block!important;
+}
+
+.d-block {
+    display: block!important;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.menu{
+    float: left;
+}
+.menu-item{
+    float: left;
+    
+    padding: 8px 10px;
+}
+.edge-item-fix{
+    list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+.d-lg-flex{
+    display: flex !important;
+}
+
+.p-responsive {
+    padding-left: 16px!important;
+    padding-right: 16px!important;
+}
+
+.flex-items-center {
+    align-items: center!important;
+}
+
+.container-xl {
+    max-width: 1280px;
+}
+
+.container-lg, .container-xl {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+style attribute {
+    word-wrap: break-word;
+}
+
+.mr-lg-3{
+    margin-right: 16px !important;
+}
+
+.flex-lg-items-center {
+    align-items: center !important;
+}
+.flax-lg-nowrap {
+    flex-wrap: nowrap !important;
+}
+.flex-justify-between {
+    justify-content: space-between!important;
+}
+.border-lg-bottom-0 {
+    border-bottom: 0!important;
+}
+
+.d-flex {
+    display: flex!important;
+}
+
+.mr-4 {
+    margin-right: 24px!important;
+}
+
+a {
+    color: #0366d6;
+    text-decoration:none;
+}
+
+a {
+    background-color: transparent;
+}
+.color-text-white {
+    color : #fff !important;
+}
+
+.octicon {
+    fill: currentColor;
+    display: inline-block;
+    overflow: visible!important;
+    vertical-align: text-bottom;
+}
+
+.page-responsive .HeaderMenu--logged-out {
+    background-color: transparent;
+    box-shadow: none;
+    overflow: visible;
+    width: auto;
+}
+
+.page-responsive .HeaderMenu--logged-out {
+    background-color: var(--color-bg-primary);
+    box-shadow: 0 10px 50px rgb(27 31 35 / 15%);
+    overflow: auto;
+    width: 300px;
+    z-index: 100;
+}
+
+.page-responsive .HeaderMenu {
+    clear: none;
+    display: block;
+}
+
+.page-responsive .HeaderMenu {
+    clear: both;
+    display: none;
+}
+
+.height-fit {
+    max-height: 100%!important;
+}
+
+.bottom-0 {
+    bottom: 0!important;
+}
+
+.right-0 {
+    right: 0!important;
+}
+
+.top-0 {
+    top: 0!important;
+}
+
+.position-lg-relative {
+    position: relative!important;
+}
+
+ /* .position-fixed {
+    position: fixed!important;
+}  */
+
+.flex-auto {
+    flex: auto!important;
+}
+
+.flex-items-center {
+    align-items: center!important;
+}
+
