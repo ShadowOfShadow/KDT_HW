@@ -81,7 +81,7 @@ li {
 
 .headerMenu-link {
     background: transparent;
-    color: var(--color-text-white);
+    color: rgba(255,255,255,0.7);
     transition: opacity .4s;
 }
 
@@ -103,6 +103,21 @@ li {
 }
 
 a:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a:-moz-any-link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a:-ms-any-link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a:-o-any-link {
     cursor: pointer;
     text-decoration: underline;
 }
