@@ -37,14 +37,14 @@ body {
     --size-2: 20px;
 }
 
-.header-overlay .Header, .header-overlay .header-logged-out {
+.header-overlay .header, .header-overlay .header-logged-out {
     background-color: transparent;
     left: 0;
     position: absolute!important;
     right: 0;
 }
 
-.Header-old {
+.header-old {
     background-color: #24292e;
     color: rgba(255,255,255,0.7);
     padding-bottom: 12px;
@@ -79,7 +79,7 @@ li {
     list-style: none!important;
 }
 
-.HeaderMenu-link {
+.headerMenu-link {
     background: transparent;
     color: var(--color-text-white);
     transition: opacity .4s;
@@ -103,7 +103,6 @@ li {
 }
 
 a:-webkit-any-link {
-    color: -webkit-link;
     cursor: pointer;
     text-decoration: underline;
 }
@@ -189,14 +188,14 @@ a {
   float:left;
 }
 
-.page-responsive .HeaderMenu--logged-out {
+.page-responsive .headerMenu--logged-out {
     background-color: transparent;
     box-shadow: none;
     overflow: visible;
     width: auto;
 }
 
-.page-responsive .HeaderMenu--logged-out {
+.page-responsive .headerMenu--logged-out {
     background-color: #fff;
     box-shadow: 0 10px 50px rgb(27 31 35 / 15%);
     overflow: auto;
@@ -204,12 +203,12 @@ a {
     z-index: 100;
 }
 
-.page-responsive .HeaderMenu {
+.page-responsive .headerMenu {
     clear: none;
     display: block;
 }
 
-.page-responsive .HeaderMenu {
+.page-responsive .headerMenu {
     clear: both;
     display: none;
 }
