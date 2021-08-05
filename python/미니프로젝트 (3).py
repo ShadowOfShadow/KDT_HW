@@ -60,10 +60,10 @@ from openpyxl import Workbook
 
 wb = Workbook()
 ws = wb.active
-ws['A1'] = '임주영'
-ws['B1'] = 'limcw3@gmail.com'
-ws['A2'] = '임주영2'
-ws['B2'] = 'limcw2@naver.com'
+ws['A1'] = '' # 보낼 이름 작성
+ws['B1'] = '' # 보낼 메일 작성
+ws['A2'] = '' # 보낼 이름 작성
+ws['B2'] = '' # 보낼 메일 작성
 
 wb.save('email_list.xlsx')
 
@@ -77,5 +77,5 @@ data = wb.active
 subjects = keyword + '의 관련 뉴스 메일 입니다.'
 contents = keyword + '''의 관련 뉴스 입니다.'''
 
-for row in data.iter_rows():    
+for row in data.iter_rows():
     send_mail(row[0].value, row[1].value, subjects, contents, file_name)
