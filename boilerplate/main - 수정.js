@@ -14,7 +14,7 @@ const data = [
 
 // 사용자 입력 받기
 const line = prompt('최대 금액을 입력해주세요.');
-const amount =+ line;
+const amount = Number(line);
 
 // 주어진 금액으로 살 수 있는 가장 비싼 상품을 구함
 const item = getItemByAmount(data, amount);
@@ -28,10 +28,8 @@ alert(msg);
 
 // 아래에 getItemByAmount 함수를 작성하세요.
 function getItemByAmount(data, amount) {
-  // 유효한 숫자 체크
-  if (isNaN(amount) || amount === "" || amount === null || amount < minAmount(data).price) {
-    return null;
-  }  
+  // 유효한 숫자 체크  
+  amount ?? null;
 
   // amount(금액)에서 살 수 있는 가장 비싼 상품 검색
   // amount보다 큰 값 제거 후 검색
@@ -42,13 +40,6 @@ function getItemByAmount(data, amount) {
   return maxAmount(max);
 }
 
-// 최소값 구하기
-function minAmount(items) {
-  const min = items.reduce((acc, val) => {
-    return acc.price < val.price ? acc : val;
-  },0);
-  return min;
-}
 
 // 최대값 구하기
 function maxAmount(items) {
