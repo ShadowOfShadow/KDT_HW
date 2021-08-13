@@ -1,6 +1,9 @@
 # 엑셀에 데이터를 저장하기 위한 모듈
 from openpyxl import Workbook
 
+# 엑셀 예외처리를 위한 모듈
+from openpyxl.utils.exceptions import SheetTitleException
+
 # 웹에서 데이터를 크롤링하기 위한 모듈
 import requests
 from bs4 import BeautifulSoup
@@ -21,15 +24,19 @@ class NaverNewsCrawler:
         ws = wb.active
         ws.append(['번호','제목','주소','요약'])
         for index, item in enumerate(news_items, start=1):
-            title_tag = item.select_one('a.news_tit')
+            title_tag = item.select_one('a.news_tit') #제목
             title = title_tag.text
-            url = title_tag.attrs['href']
-            description = item.select_one('div.news_dsc').text if len(item.select_one('div.news_dsc').text) >= 3 else "요약 정보 없음"
+            url = title_tag.attrs['href'] # 주소
+            description = item.select_one('div.news_dsc').text if len(item.select_one('div.news_dsc').text) >= 3 else "요약 정보 없음" # 3글자 이상 요약없으면 요약없음으로 처리
             print(index, title, url, description)
-            ws.append([index, title, url, description])
+            ws.append([index, title, url, description]) # 액셀에 추가
         try:
             wb.save(file_name)
             print(f"{file_name}에 데이터 저장 완료")
-        except Exception as e:
+        except Exception as e:            
             print(e)
+        except SheetTitleException as e:
+            print("잘못된 시트 이름에 대한 오류입니다.")
+            wb.save(input('파일명을 다시 입력해주세요 : '))
+
         print(f"{self.keyword}에 대한 기사 수집 완료")

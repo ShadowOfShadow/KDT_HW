@@ -1,11 +1,22 @@
 from NaverNewsCrawler import NaverNewsCrawler
 
+# 저장하는 파일명에 대한 예외처리
+import os
+
+# json 처리 모듈
+import json
+
 ####사용자로 부터 기사 수집을 원하는 키워드를 input을 이용해 입력받아 ? 부분에 넣으세요
 keyword = input('수집할 기사 내용 검색: ')
 crawler = NaverNewsCrawler(keyword)
 
 #### 수집한 데이터를 저장할 엑셀 파일명을 input을 이용해 입력받아 ? 부분에 넣으세요
 file_name = input('저장할 액셀 파일명: ')
+file_name_extention = os.path.splitext(file_name)[-1] # 확장자 축출
+if file_name_extention != '.xlsx':
+    file_name_base = os.path.basename(file_name) # 이름 축출   
+    file_name = file_name_base + '.xlsx'
+
 crawler.get_news(file_name)
 
 #### 아래코드를 실행해 이메일 발송 기능에 필요한 모듈을 임포트하세요.
@@ -17,8 +28,12 @@ import re
 #### gmail 발송 기능에 필요한 계정 정보를 아래 코드에 입력하세요.
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 465
-SMTP_USER = input('smtp id: ')
-SMTP_PASSWORD = input('smtp password: ')
+with open('conf.json', encoding='utf-8') as myUserInfo:
+    config = json.load(myUserInfo)
+SMTP_USER = config['email']
+SMTP_PASSWORD = config['password']
+#SMTP_USER = input('smtp id: ')
+#SMTP_PASSWORD = input('smtp password: ')
 
 #### 아래 코드를 실행해 메일 발송에 필요한 send_mail 함수를 만드세요.
 def send_mail(name, addr, subject, contents, attachment=None):
@@ -60,10 +75,12 @@ from openpyxl import Workbook
 
 wb = Workbook()
 ws = wb.active
-ws['A1'] = '' # 보낼 이름 작성
-ws['B1'] = '' # 보낼 메일 작성
-ws['A2'] = '' # 보낼 이름 작성
-ws['B2'] = '' # 보낼 메일 작성
+with open('sendemail.json', encoding='utf-8') as senduser:
+    send_user = json.load(senduser)
+ws['A1'] = send_user['emailusername1'] # 보낼 이름 작성
+ws['B1'] = send_user['email1'] # 보낼 메일 작성
+ws['A2'] = send_user['emailusername2'] # 보낼 이름 작성
+ws['B2'] = send_user['email2'] # 보낼 메일 작성
 
 wb.save('email_list.xlsx')
 
