@@ -13,9 +13,9 @@ crawler = NaverNewsCrawler(keyword)
 #### 수집한 데이터를 저장할 엑셀 파일명을 input을 이용해 입력받아 ? 부분에 넣으세요
 file_name = input('저장할 액셀 파일명: ')
 file_name_extention = os.path.splitext(file_name)[-1] # 확장자 축출
-if file_name_extention != '.xlsx':
-    file_name_base = os.path.basename(file_name) # 이름 축출   
-    file_name = file_name_base + '.xlsx'
+file_name_base = os.path.basename(file_name).split('.') # 이름 축출
+if file_name_extention != '.xlsx':     
+    file_name = file_name_base[0] + '.xlsx'
 
 crawler.get_news(file_name)
 
@@ -35,7 +35,9 @@ SMTP_PASSWORD = config['password']
 
 #### 아래 코드를 실행해 메일 발송에 필요한 send_mail 함수를 만드세요.
 def send_mail(name, addr, subject, contents, attachment=None):
-    if not re.match('(^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)', addr):
+    patt = '(^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)'
+    #patt = '([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@([a-zA-Z0-9]+)([\.])([a-zA-Z\.]+)'
+    if not re.match(patt, addr):
         print('Wrong email')
         return
 
