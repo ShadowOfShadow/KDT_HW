@@ -32,8 +32,6 @@ with open('conf.json', encoding='utf-8') as myUserInfo:
     config = json.load(myUserInfo)
 SMTP_USER = config['email']
 SMTP_PASSWORD = config['password']
-#SMTP_USER = input('smtp id: ')
-#SMTP_PASSWORD = input('smtp password: ')
 
 #### 아래 코드를 실행해 메일 발송에 필요한 send_mail 함수를 만드세요.
 def send_mail(name, addr, subject, contents, attachment=None):
